@@ -1,0 +1,42 @@
+menu "Project Configuration"
+
+    menu "ESP-NOW Configuration"
+
+        config ESPNOW_PMK
+            string "ESP-NOW Primary Master Key (PMK)"
+            default ""
+            help
+              Primary Master Key for ESP-NOW encryption (16 characters).
+              Leave empty to disable encryption.
+              All nodes in the same ESP-NOW network should use the same PMK.
+
+        config ESPNOW_HEARTBEAT_TIMEOUT_S
+            int "Heartbeat Timeout (seconds)"
+            default 60
+            range 10 600
+            help
+              If no heartbeat is received from a node within this period,
+              the node will be marked as offline.
+
+        config ESPNOW_HEARTBEAT_CHECK_S
+            int "Heartbeat Check Interval (seconds)"
+            default 10
+            range 5 120
+            help
+              Interval at which the gateway scans the node table to detect
+              nodes that have exceeded the heartbeat timeout.
+
+    endmenu
+
+    menu "Sensor Configuration"
+
+        config SENSOR_SAMPLE_INTERVAL_S
+            int "Sensor Sample Interval (seconds)"
+            default 5
+            range 1 3600
+            help
+              Interval in seconds between sensor readings (ENS160 + AHT21).
+
+    endmenu
+
+endmenu
