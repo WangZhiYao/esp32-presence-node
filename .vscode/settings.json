@@ -1,19 +1,20 @@
 {
   "C_Cpp.intelliSenseEngine": "default",
-  "idf.espIdfPathWin": "D:\\Espressif\\framework\\v5.5.2\\esp-idf",
+  "idf.espIdfPathWin": "D:\\Espressif\\framework\\v5.5.3\\esp-idf",
   "idf.pythonInstallPath": "D:\\Espressif\\tools\\idf-python\\3.11.2\\python.exe",
   "idf.openOcdConfigs": [
-    "board/esp32c6-builtin.cfg"
+    "board/esp32-wrover-kit-3.3v.cfg"
   ],
-  "idf.portWin": "COM12",
+  "idf.portWin": "COM17",
   "idf.toolsPathWin": "D:\\Espressif",
   "idf.customExtraVars": {
-    "IDF_TARGET": "esp32c6"
+    "IDF_TARGET": "esp32c2"
   },
   "clangd.path": "D:\\Espressif\\tools\\esp-clang\\esp-19.1.2_20250312\\esp-clang\\bin\\clangd.exe",
   "clangd.arguments": [
     "--background-index",
     "--query-driver=**",
     "--compile-commands-dir=d:\\Projects\\esp32\\esp32-presence-node\\build"
-  ]
+  ],
+  "idf.flashType": "UART"
 }

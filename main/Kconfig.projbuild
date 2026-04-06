@@ -30,12 +30,33 @@ menu "Project Configuration"
 
     menu "Sensor Configuration"
 
-        config SENSOR_SAMPLE_INTERVAL_S
-            int "Sensor Sample Interval (seconds)"
-            default 5
-            range 1 3600
+        config LD2412_UART_PORT_NUM
+            int "LD2412 UART Port Number"
+            default 1
+            range 0 2
             help
-              Interval in seconds between sensor readings (ENS160 + AHT21).
+              UART port number for LD2412 sensor communication.
+
+        config LD2412_UART_TX_PIN
+            int "LD2412 UART TX GPIO"
+            default 16
+            help
+              GPIO pin for UART TX to LD2412.
+
+        config LD2412_UART_RX_PIN
+            int "LD2412 UART RX GPIO"
+            default 17
+            help
+              GPIO pin for UART RX from LD2412.
+
+        config LD2412_REPORT_INTERVAL_MS
+            int "LD2412 Minimum Report Interval (ms)"
+            default 1000
+            range 100 10000
+            help
+              Minimum interval between data report callbacks in milliseconds.
+              The driver still updates its internal data on every frame,
+              but the callback will only fire at most once per this interval.
 
     endmenu
 
